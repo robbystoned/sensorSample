@@ -13,7 +13,7 @@ namespace connectAzureDBService
     // NOTE: In order to launch WCF Test Client for testing this service, please select Service1.svc or Service1.svc.cs at the Solution Explorer and start debugging.
     public class Service1 : IService1
     {
-        SqlConnection sqlCon = new SqlConnection("Data Source=robertdb.database.windows.net;Initial Catalog=TempLoggerDB;Integrated Security=False;User ID=robert;Password=87PBu4IaqUjZPRQm3XBS;Connect Timeout=60;Encrypt=False;TrustServerCertificate=True;ApplicationIntent=ReadWrite;MultiSubnetFailover=False");
+        SqlConnection sqlCon = new SqlConnection("Data Source=robertdb.database.windows.net;Initial Catalog=TempLoggerDB;Integrated Security=False;User ID=robert;Password=;Connect Timeout=60;Encrypt=False;TrustServerCertificate=True;ApplicationIntent=ReadWrite;MultiSubnetFailover=False");
         public string logTemperature(float temperature, float humidity)
         {
             try
