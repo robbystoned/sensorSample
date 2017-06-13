@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="4c8693cd-2bc0-4183-90d1-fa59805641e9" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings>
+      <CollectionMapping TypeName="System.Collections.ObjectModel.ObservableCollection`1" Category="List" />
+    </CollectionMappings>
+    <GenerateSerializableTypes>false</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://connectazuredbservice20170613021300.azurewebsites.net/Service1.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="Service13.xsd" MetadataType="Schema" ID="1c63e30a-e2d6-43b8-a621-8e339a61aecd" SourceId="1" SourceUrl="http://connectazuredbservice20170613021300.azurewebsites.net/Service1.svc?xsd=xsd0" />
+    <MetadataFile FileName="Service11.wsdl" MetadataType="Wsdl" ID="06c29bb6-6f68-4dad-ba3a-9cab8ebc0c6e" SourceId="1" SourceUrl="http://connectazuredbservice20170613021300.azurewebsites.net/Service1.svc?wsdl" />
+    <MetadataFile FileName="Service11.disco" MetadataType="Disco" ID="a2024fc9-e800-4ac3-8415-f6a19745d1c4" SourceId="1" SourceUrl="http://connectazuredbservice20170613021300.azurewebsites.net/Service1.svc?disco" />
+    <MetadataFile FileName="Service131.xsd" MetadataType="Schema" ID="ccd4f956-db03-43c5-9e8a-348902a679ea" SourceId="1" SourceUrl="http://connectazuredbservice20170613021300.azurewebsites.net/Service1.svc?xsd=xsd1" />
+    <MetadataFile FileName="Service132.xsd" MetadataType="Schema" ID="0d455f9b-233a-4c6b-aee6-977c4f6ab9b1" SourceId="1" SourceUrl="http://connectazuredbservice20170613021300.azurewebsites.net/Service1.svc?xsd=xsd2" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

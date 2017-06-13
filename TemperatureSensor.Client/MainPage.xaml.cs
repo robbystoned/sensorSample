@@ -10,6 +10,7 @@ using Microsoft.Azure.Devices.Client;
 using Newtonsoft.Json;
 using System.Text;
 
+
 // The Blank Page item template is documented at http://go.microsoft.com/fwlink/?LinkId=402352&clcid=0x409
 
 namespace TemperatureSensor.Client
@@ -100,6 +101,7 @@ namespace TemperatureSensor.Client
             _startedAt = DateTimeOffset.Parse("1/1/1");
 
             lcd = new displayI2C(DEVICE_I2C_ADDRESS, I2C_CONTROLLER_NAME, RS, RW, EN, D4, D5, D6, D7, BL);
+            //lcd.createSymbol(new byte[] { 0x00, 0x00, 0x0A, 0x00, 0x11, 0x0E, 0x00, 0x00 }, 0x00);
             lcd.init();
 
 
@@ -144,13 +146,17 @@ namespace TemperatureSensor.Client
 
                     lcd.clrscr();
                     // Here is printed string
-                    lcd.prints("Temperature: " + this.Temperature);
+                    lcd.prints($"Temp: {Temperature}");
+                    lcd.printSymbol(0xDF);
+                    lcd.prints("C");
 
                     // Navigation to second line
                     lcd.gotoxy(0, 1);
 
                     // Here is printed string
-                    lcd.prints("Humidity: " + this.Humidity);
+                    lcd.prints($"Humidity: {Humidity}% RH");
+
+                    logToDB(Temperature, Humidity);
                     var messageString = JsonConvert.SerializeObject(telemetryDataPoint);
                     var message = new Message(Encoding.ASCII.GetBytes(messageString));
 
@@ -172,6 +178,20 @@ namespace TemperatureSensor.Client
             {
                 Debug.WriteLine(ex.Message);
             }
+        }
+
+        private void logToDB(float temp, float humidity)
+        {
+            try
+            {
+                ServiceReference1.Service1Client client = new ServiceReference1.Service1Client(new ServiceReference1.Service1Client.EndpointConfiguration());
+                client.logTemperatureAsync(temp, humidity);
+            }
+            catch (Exception ex) // log any exception that occurs
+            {
+                Debug.WriteLine(ex.Message);
+            }
+          
         }
 
         #region application properties
